@@ -28,6 +28,8 @@ public struct ASLectureTable<Content: View>: View {
                 content()
             }
         }
+        .clipShape(ASLecturetableBorderShape(configuration: configuration,
+                                             onlyOutline: true))
     }
 }
 
