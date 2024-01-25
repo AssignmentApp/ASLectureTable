@@ -8,11 +8,16 @@
 import Foundation
 import SwiftUI
 
-struct ASLecturetableBorderShape: Shape {
+public struct ASLecturetableBorderShape: Shape {
     var configuration: ASLecturetableConfiguration
     var onlyOutline: Bool
     
-    func path(in rect: CGRect) -> Path {
+    public init(configuration: ASLecturetableConfiguration, onlyOutline: Bool) {
+        self.configuration = configuration
+        self.onlyOutline = onlyOutline
+    }
+    
+    public func path(in rect: CGRect) -> Path {
         Path { path in
             if !onlyOutline {
                 addTimeLines(bounds: rect, path: &path)
